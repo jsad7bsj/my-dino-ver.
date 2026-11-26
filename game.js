@@ -124,3 +124,10 @@ function gameLoop() {
 }
 
 gameLoop();
+
+document.addEventListener("pointerdown", (e) => {
+    if (e.pointerType === "touch") {
+        if (e.target.closest("button, a")) return;
+        jump();
+    }
+});
